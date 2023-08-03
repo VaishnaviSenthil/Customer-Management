@@ -1,0 +1,297 @@
+/* Add this CSS to style the navigation bar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.home-section {
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+/* .menu-list li a:hover {
+  background-color: black;
+
+}  */
+/* Add this CSS to style the Amazon-style navigation bar */
+.amazon-navbar {
+background-color: #131921;
+padding: 10px;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+padding: 30px 100px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 10000;
+}
+
+.menu-list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+.menu-list li {
+margin-right: 20px;
+}
+
+.menu-list li:last-child {
+margin-right: 0;
+}
+
+.menu-list li a {
+text-decoration: none;
+color: #fff;
+font-weight: bold;
+padding: 5px 10px;
+border-radius: 5px;
+}
+
+.menu-list li a:hover {
+/* background-color: #c4c4c4; */
+color:black;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+h2 {
+text-align: center;
+color: #131921;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+h2 {
+text-align: center;
+color: #131921;
+}
+
+/* Amazon-style navigation bar */
+.amazon-navbar {
+/* background-color: #131921; */
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.menu-list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+.menu-list li {
+margin-right: 20px;
+position: relative;
+}
+
+.menu-list li a {
+text-decoration: none;
+color: #fff;
+font-weight: bold;
+padding: 5px 10px;
+border-radius: 5px;
+}
+
+.menu-list li a:hover {
+/* background-color: #c4c4c4; */
+color: white;
+}
+
+.amazon-logo {
+color: #fff;
+font-size: 24px;
+justify-content: center;
+display: flex;
+}
+
+.amazon-logo i {
+margin-right: 5px;
+}
+
+/* Animation on hover */
+.menu-list li::after {
+content: "";
+position: absolute;
+bottom: -3px;
+left: 0;
+width: 0;
+height: 3px;
+background-color: #c4c4c4;
+transition: width 0.3s ease-in-out;
+}
+
+.menu-list li:hover::after {
+width: 100%;
+}
+
+
+/* newwwwwwwwwwwwwwwwwwwwww */
+header {  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active {
+  /* background: #fff; */
+  color:white;
+}
+body {
+  /* background-color: #f0f0f0; */
+  /* Use the URL of your image as the value for 'background-image' property */
+  background: url('https://media.istockphoto.com/id/1234887973/photo/empty-wooden-planks-with-blur-beach-and-sea-on-background.webp?b=1&s=170667a&w=0&k=20&c=zqcUjVuC_Budil_oRkGCDmoatTgHIeFL4GfxIxP2n0Y=');
+  /* Set the background size to cover the whole viewport */
+  background-size: cover;
+  /* Set the background repeat property to 'no-repeat' to prevent repeating the image */
+  background-repeat: no-repeat;
+  /* Center the background vertically and horizontally */
+  background-position: center center;
+  background-position-y: 20%;
+  
+}
+h3 {
+  font-size: 200px;
+}
+.container-welcome {
+  display: flex;
+/*   border:1px solid red; */
+  height: 100%;
+  align-items: center;
+}
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #840037;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #BD0034;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #BD0034;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FDB731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+.bg-img{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+
+
+
