@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <!-- Load Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Load AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        .registration-container {
+  margin-top: 50px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+}
+
+.registration-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.registration-container form {
+  margin-top: 20px;
+}
+
+.registration-container .mb-3 {
+  margin-bottom: 20px;
+}
+
+.registration-container .text-center {
+  text-align: center;
+}
+    </style>
+</head>
+<body ng-app="app" ng-controller="registerController">
+    <div class="container ">
+        <div class="container registration-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center ">Registration Form</h1>
+                <form name="registrationForm" ng-submit="submitForm()" novalidate>
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Alphabet Only" ng-model="user.firstName" ng-pattern="/^[A-Za-z]+$/" required>
+                        <!-- <span class="text-danger" ng-show="registrationForm.firstName.$touched && registrationForm.firstName.$error.required">First Name is required</span> -->
+                        <span class="text-danger" ng-show="registrationForm.firstName.$error.pattern">Enter Alphabet Only</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter more than 3 Alphabet" ng-model="user.lastName" ng-pattern="/^[A-Za-z]{3,}$/" required>
+                        <span class="text-danger" ng-show="registrationForm.lastName.$touched && registrationForm.lastName.$error.required">Last Name is required</span>
+                        <span class="text-danger" ng-show="registrationForm.lastName.$error.pattern">Enter more than 3 Alphabet</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email in Correct Format" ng-model="user.email" required>
+                        <span class="text-danger" ng-show="registrationForm.email.$touched && registrationForm.email.$error.required">Email is required</span>
+                        <span class="text-danger" ng-show="registrationForm.email.$error.email">Invalid email format</span>
+
+                    </div>
+                  
+                    
+                    
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter password more than 10 characters" ng-model="user.password" ng-minlength="6" required>
+                        <span class="text-danger" ng-show="registrationForm.password.$touched && registrationForm.password.$error.required">Password is required</span>
+                        <span class="text-danger" ng-show="registrationForm.password.$error.minlength">Password should be at least 6 characters long</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number:</label>
+                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter only 10 digits" ng-model="user.phone" ng-pattern="/^\d{10}$/" required>
+                        <span class="text-danger" ng-show="registrationForm.phone.$touched && registrationForm.phone.$error.required">Phone is required</span>
+                        <span class="text-danger" ng-show="registrationForm.phone.$error.pattern">Enter only 10 digits</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="otp" class="form-label">Enter OTP:</label>
+                        <input type="text" id="otp1" name="otp1" class="form-control" ng-model="otp1" ng-pattern="/^\d{4}$/" required>
+                       <span class="text-danger" ng-show="registrationForm.otp1.$touched && registrationForm.otp1.$error.required">OTP is required</span>
+                       <span class="text-danger" ng-show="registrationForm.otp1.$error.pattern">Enter only 4 digits</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address:</label>
+                        <input type="text" id="address" name="address" class="form-control" placeholder="Enter Your Address" ng-model="user.address" required>
+                        <span class="text-danger" ng-show="registrationForm.address.$touched && registrationForm.address.$error.required">Address is required</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Choose Profile Picture:</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" ng-model="user.avatarPath" value="images/avatar1.jpg">
+                            <img src="images/avatar1.jpg" alt="Avatar 1" width="50" height="50">
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" ng-model="user.avatarPath" value="images/avatar2.jpg">
+                            <img src="images/avatar2.jpg" alt="Avatar 2" width="50" height="50">
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" ng-model="user.avatarPath" value="images/avatar3.jpg">
+                            <img src="images/avatar3.jpg" alt="Avatar 3" width="50" height="50">
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" ng-model="user.avatarPath" value="images/avatar4.jpg">
+                            <img src="images/avatar4.jpg" alt="Avatar 4" width="50" height="50">
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary" ng-click="generateOTP()" ng-disabled="disableGenerateOTP">Generate OTP</button>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="submit" value="Register" class="btn btn-primary" ng-disabled="registrationForm.$invalid">
+                    </div>
+                
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
