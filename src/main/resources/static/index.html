@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #e5e5f7;
+      background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+      background-size: 10px 10px;
+
+    }
+    .login-container {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+    }
+
+    .login-container h2 {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-container .form-group {
+        margin-bottom: 20px;
+    }
+
+    .login-container .error {
+        color: #cc0000;
+        font-size: 12px;
+    }
+
+    .login-container .forgot-password-link {
+        text-align: center;
+        display: block;
+        font-size: 14px;
+    }
+
+    .forgot-password-modal .modal-dialog {
+        max-width: 400px;
+    }
+
+    .forgot-password-modal .modal-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .forgot-password-modal .modal-body p {
+        font-size: 14px;
+    }
+
+    .forgot-password-modal .modal-body input {
+        margin-bottom: 10px;
+    }
+
+    .forgot-password-modal .error {
+        color: #cc0000;
+        font-size: 12px;
+    }
+    .buttons{
+      text-align: center;
+      padding-bottom: 8px;
+    }
+</style>
+<div class="text-center"> 
+  <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/177941a2-e16a-4f57-b0c5-c62b7e5e163b-profile_image-300x300.png" style="height: 40px; width: 40px;">
+  <h2 style="font-weight: bold;">MatriX</h2>
+  </div>
+</head>
+<body class="login" ng-app="app" ng-controller="rolesController">
+  
+  <div class="container login-container">
+    <h2>Login Form</h2>
+    <form ng-submit="login()">
+      <div class="form-group">
+        <label for="email">Username:</label>
+        <input type="text" class="form-control" ng-model="user.email" placeholder="Enter your email" required>
+        <span id="emailError" class="error"></span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" ng-model="user.password" placeholder="Enter your password" required>
+        <span id="passwordError" class="error"></span>
+      </div>
+      <div class="buttons">
+      <button type="submit" class="btn btn-primary" ng-click="checkEmail()">Login</button>
+    </div>
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary" ng-click="forgotPassword()">Forgot Password</button>
+      </div>
+    </form>
+    <div class="buttons">
+      <button type="submit" class="btn btn-primary" ng-click="redirectToRegister()" >Register</button> 
+    </div>
+  </div>
+  <script src="/webjars/angularjs/1.4.9/angular.js"></script>
+  <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+  <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controller.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</body>
+</html>
