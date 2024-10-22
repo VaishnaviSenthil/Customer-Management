@@ -11,19 +11,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * The type User.
- *
- * @author Givantha Kalansuriya
- */
 @Entity
-@Table(name = "Customers", uniqueConstraints = @UniqueConstraint(columnNames = "email_address"))
+@Table(name = "All_Users_Only", uniqueConstraints = @UniqueConstraint(columnNames = "email_address"))
 @EntityListeners(AuditingEntityListener.class)
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -72,7 +67,7 @@ public class User {
    *
    * @return the id
    */
-  public long getId() {
+  public int getId() {
         return id;
     }
 
@@ -81,13 +76,13 @@ public class User {
    *
    * @param id the id
    */
-  public void setId(long id) {
+  public void setId(int id) {
         this.id = id;
     }
 
   /**
    * Gets first name.
-   *
+   *cd 
    * @return the first name
    */
   public String getFirstName() {
